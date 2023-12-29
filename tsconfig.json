@@ -4,6 +4,7 @@
       "module": "CommonJS",
       "moduleResolution": "node",
       "target": "ES2021",
+      "types": ["node"],
       "outDir": "dist",
       "sourceMap": false,
       "skipLibCheck": true,
