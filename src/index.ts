@@ -2,6 +2,7 @@ import {
     BuildOptions,
     FileFsRef,
     Lambda,
+    execCommand,
     glob
 } from '@vercel/build-utils';
 import { join } from 'path';
@@ -20,6 +21,8 @@ export async function build(options: BuildOptions) {
     const startHandlerFile = new FileFsRef({ fsPath: join(__dirname, "../startHandler.sh") })
     startHandlerFile.mode = 33261 // 0755;
     console.log(startHandlerFile.fsPath)
+
+    execCommand("./gradlew run")
     const lambda = new Lambda({
         files: {
             ...handlerFiles,
