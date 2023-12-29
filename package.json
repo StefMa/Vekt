@@ -12,7 +12,9 @@
     "files": [
         "dist",
         "handler",
-        "*.ts"
+        "src",
+        "startHandler.sh",
+        "tsconfig.json"
     ],
     "devDependencies": {
         "@types/node": "20.10.5",
