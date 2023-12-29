@@ -25,7 +25,7 @@ export async function build(options: BuildOptions) {
     const x = "cd " + join(__dirname, "../handler") + " "
     const y = "&& ./gradlew run"
     const u = x + y
-    execCommand(u)
+    await execCommand(u)
     const lambda = new Lambda({
         files: {
             ...handlerFiles,
