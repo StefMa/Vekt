@@ -15,6 +15,8 @@ export async function build(options: BuildOptions) {
     console.log(options.repoRootPath)
     console.log(__dirname)
     const handlerFiles = await glob("**", join(__dirname, "../handler"))
+    const bootstrap = new FileFsRef({ fsPath: join(__dirname, "../bootstrap") })
+    bootstrap.mode = 33261 // 0755;
     const startHandlerFile = new FileFsRef({ fsPath: join(__dirname, "../startHandler.sh") })
     startHandlerFile.mode = 33261 // 0755;
     console.log(startHandlerFile.fsPath)
@@ -22,7 +24,7 @@ export async function build(options: BuildOptions) {
         files: {
             ...handlerFiles,
             startHandlerFile,
-            'bootstrap': new FileFsRef({ fsPath: join(__dirname, "../bootstrap") })
+            bootstrap
         },
         handler: startHandlerFile.fsPath,
         runtime: "provided.al2023"
