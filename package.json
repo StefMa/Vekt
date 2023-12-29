@@ -14,7 +14,8 @@
         "handler",
         "src",
         "startHandler.sh",
-        "tsconfig.json"
+        "tsconfig.json",
+        "bootstrap"
     ],
     "devDependencies": {
         "@types/node": "20.10.5",
