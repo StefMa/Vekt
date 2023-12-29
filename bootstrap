@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ls /
-ls /bin
-/bin/yum install java-11-amazon-corretto
+ls -R /usr
+yum install java-11-amazon-corretto
 java --version
 ./gradlew run

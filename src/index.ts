@@ -27,7 +27,7 @@ export async function build(options: BuildOptions) {
             bootstrap
         },
         handler: startHandlerFile.fsPath,
-        runtime: "provided.al2023"
+        runtime: "provided.al2"
     })
 
     return { output: lambda }
