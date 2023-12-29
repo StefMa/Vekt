@@ -22,7 +22,10 @@ export async function build(options: BuildOptions) {
     startHandlerFile.mode = 33261 // 0755;
     console.log(startHandlerFile.fsPath)
 
-    execCommand("./gradlew run")
+    const x = "cd " + join(__dirname, "../handler") + " "
+    const y = "&& ./gradlew run"
+    const u = x + y
+    execCommand(u)
     const lambda = new Lambda({
         files: {
             ...handlerFiles,
