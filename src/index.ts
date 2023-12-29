@@ -14,7 +14,7 @@ export async function build(options: BuildOptions) {
     console.log(options.workPath)
     console.log(options.repoRootPath)
     console.log(__dirname)
-    const x = await glob("**", __dirname)
+    const x = await glob(join(__dirname, "../handler/**"), __dirname)
     const handlerPath = new FileFsRef({ fsPath: join(__dirname, "../handler") })
     console.log(handlerPath.fsPath)
     const startHandlerPath = new FileFsRef({ fsPath: join(__dirname, "../startHandler.sh") })
