@@ -19,7 +19,7 @@ export async function build(options: BuildOptions) {
     console.log(startHandlerPath.fsPath)
     const lambda = new Lambda({
         files: {
-            'handler': handlerPath,
+            //'handler': handlerPath,
             'startHandler.sh': startHandlerPath
         },
         handler: startHandlerPath.fsPath,
