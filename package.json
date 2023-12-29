@@ -1,0 +1,20 @@
+{
+    "name": "vekt",
+    "author": "Stefan M. <StefMaDev@outlook.com>",
+    "version": "1.0.0",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "prepublishOnly": "tsc"
+    },
+    "files": [
+        "dist",
+        "handler"
+    ],
+    "devDependencies": {
+        "@types/node": "20.10.5",
+        "@vercel/build-utils": "7.4.1"
+    }
+}
