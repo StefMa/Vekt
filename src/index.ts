@@ -1,13 +1,14 @@
 import {
     BuildOptions,
     FileFsRef,
-    Lambda
+    Lambda,
+    debug
 } from '@vercel/build-utils';
 
 export const version = 3;
 
 export async function build(options: BuildOptions) {
-    console.log('Hit index.ts!');
+    debug('Hit index.ts!')
     const lambda = new Lambda({
         files: {
             'handler': new FileFsRef({ fsPath: "handler" }),
