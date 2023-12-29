@@ -13,8 +13,8 @@ export async function build(options: BuildOptions) {
     console.log(options.workPath)
     console.log(options.repoRootPath)
     console.log(__dirname)
-    const handlerPath = new FileFsRef({ fsPath: join(__dirname, "handler") })
-    const startHandlerPath = new FileFsRef({ fsPath: join(__dirname, "startHandler.sh") })
+    const handlerPath = new FileFsRef({ fsPath: join(__dirname, "../handler") })
+    const startHandlerPath = new FileFsRef({ fsPath: join(__dirname, "../startHandler.sh") })
     console.log(handlerPath.fsPath)
     const lambda = new Lambda({
         files: {
