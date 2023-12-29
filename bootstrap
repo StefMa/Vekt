@@ -1,5 +1,6 @@
 #!/bin/bash
 
+su
 dnf install java-11-amazon-corretto
 java --version
 ./gradlew run
