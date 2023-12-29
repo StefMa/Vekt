@@ -13,11 +13,12 @@ export async function build(options: BuildOptions) {
     console.log(options.workPath)
     console.log(options.repoRootPath)
     const handlerPath = new FileFsRef({ fsPath: join(options.workPath, "handler") })
+    const startHandlerPath = new FileFsRef({ fsPath: join(options.workPath, "handler") })
     console.log(handlerPath.fsPath)
     const lambda = new Lambda({
         files: {
-            'handler': new FileFsRef({ fsPath: "handler" }),
-            'startHandler.sh': new FileFsRef({ fsPath: "startHandler.sh" })
+            'handler': handlerPath,
+            'startHandler.sh': startHandlerPath
         },
         handler: "startHandler.sh",
         runtime: "provided.al2023"
