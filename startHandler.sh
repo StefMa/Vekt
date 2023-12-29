@@ -1,2 +1,1 @@
-cd handler
 ./gradlew run
