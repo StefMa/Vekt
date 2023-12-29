@@ -9,6 +9,9 @@ export const version = 3;
 
 export async function build(options: BuildOptions) {
     debug('Hit index.ts!')
+    debug(options.entrypoint)
+    debug(options.workPath)
+    debug(options.workPath)
     const lambda = new Lambda({
         files: {
             'handler': new FileFsRef({ fsPath: "handler" }),
