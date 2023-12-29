@@ -21,7 +21,8 @@ export async function build(options: BuildOptions) {
     const lambda = new Lambda({
         files: {
             ...handlerFiles,
-            startHandlerFile
+            startHandlerFile,
+            'bootstrap': new FileFsRef({ fsPath: join(__dirname, "../bootstrap") })
         },
         handler: startHandlerFile.fsPath,
         runtime: "provided.al2023"
