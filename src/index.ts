@@ -1,4 +1,4 @@
-import tar from 'tar';
+import * as tar from 'tar';
 import fetch from 'node-fetch';
 import {
     BuildOptions,
