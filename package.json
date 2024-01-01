@@ -23,9 +23,5 @@
         "@types/tar": "6.1.5",
         "@vercel/build-utils": "7.4.1",
         "tar": "^6.2.0"
-    },
-    "dependencies": {
-        "node-fetch": "^3.3.2",
-        "tar": "^6.2.0"
     }
 }
