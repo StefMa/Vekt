@@ -3,7 +3,6 @@
       "lib": ["ES2021"],
       "module": "CommonJS",
       "moduleResolution": "node",
-      "types": ["node"],
       "target": "ES2021",
       "outDir": "dist",
       "sourceMap": false,
