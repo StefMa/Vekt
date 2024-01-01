@@ -21,7 +21,6 @@
       "@vercel/build-utils": "7.4.1",
         "@types/node": "20.10.5",
         "@types/tar": "6.1.5",
-        "@types/node-fetch": "2.3.0",
-        "tar": "6.2.0"
+        "@types/node-fetch": "2.3.0"
     }
 }
