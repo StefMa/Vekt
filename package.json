@@ -15,11 +15,13 @@
         "src",
         "startHandler.sh",
         "tsconfig.json",
-        "bootstrap",
-        "amazon-corretto-11.0.21.9.1-linux-x86/"
+        "bootstrap"
     ],
     "devDependencies": {
+      "@vercel/build-utils": "7.4.1",
         "@types/node": "20.10.5",
-        "@vercel/build-utils": "7.4.1"
+        "@types/tar": "6.1.5",
+        "@types/node-fetch": "2.3.0",
+        "tar": "6.2.0"
     }
 }
