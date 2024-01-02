@@ -4,7 +4,7 @@ import {
     BuildOptions,
     FileFsRef,
     Lambda,
-    execCommand,
+    download,
     glob
 } from '@vercel/build-utils';
 import { join } from 'path';
@@ -17,6 +17,7 @@ export async function build(options: BuildOptions) {
     console.log(options.workPath)
     console.log(options.repoRootPath)
     console.log(__dirname)
+    await download(options.files, options.workPath, options.meta)
     const handlerFiles = await glob("**", join(__dirname, "../handler"))
     const bootstrap = new FileFsRef({ fsPath: join(__dirname, "../bootstrap") })
     bootstrap.mode = 33261 // 0755;
@@ -25,7 +26,7 @@ export async function build(options: BuildOptions) {
     console.log(startHandlerFile.fsPath)
 
     const javaPath = new FileFsRef({ fsPath: join(__dirname, "../java") })
-    download(javaPath.fsPath)
+    await downloadJava(javaPath.fsPath)
 
     const x = "cd " + join(__dirname, "../handler") + " "
     const y = "&& ./gradlew run"
@@ -45,7 +46,7 @@ export async function build(options: BuildOptions) {
     return { output: lambda }
 }
 
-async function download(pathToSave: string) {
+async function downloadJava(pathToSave: string) {
     const response = await fetch("https://api.foojay.io/disco/v3.0/ids/514f8e553fa8693ab74ef35df96f566f/redirect")
     response.body.pipe((tar.extract({ cwd: pathToSave, strip: 1 })))
 }
