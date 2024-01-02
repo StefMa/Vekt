@@ -3,19 +3,15 @@
     "author": "Stefan M. <StefMaDev@outlook.com>",
     "version": "1.0.0",
     "license": "MIT",
-    "main": "dist/index.js",
+    "main": "./dist/index",
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "npm install && tsc",
         "prepublishOnly": "tsc"
     },
     "files": [
-        "dist",
-        "handler",
-        "src",
-        "startHandler.sh",
-        "tsconfig.json",
-        "bootstrap"
+        "./dist",
+        "handler"
     ],
     "devDependencies": {
         "@types/node": "20.10.5",
